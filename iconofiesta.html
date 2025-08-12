@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Icono Lottie Fiesta</title>
+  <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
+  <style>
+    #lottie-fiesta {
+      width: 200px;
+      height: 200px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Animación Fiesta</h1>
+  <div id="lottie-pin"></div>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-fiesta'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'icon-fiesta.json'  // Aquí debe coincidir el nombre de tu archivo JSON
+    });
+  </script>
+
+</body>
+</html>

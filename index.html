@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acceso a la invitación</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Libre Baskerville', serif;
+    }
+    input::placeholder {
+      color: #bbb;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+    }
+
+    .custom-button {
+      background-color: #b89478; /* Beige */
+      color: white;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .container {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
+    const invitados = {
+  "GL101": { nombre: "CARBALLO RUBEN", invitados: 1 },
+  "GL102": { nombre: "EVANGELINA Y MARCOS", invitados: 2 },
+  "GL103": { nombre: "CARBALLO ROCIO", invitados: 1 },
+  "GL104": { nombre: "FUGGI MICAELA", invitados: 1 },
+  "GL105": { nombre: "RIVERO ROSA", invitados: 1 },
+  "GL106": { nombre: "JOSE, MARIELA, JUANA Y OLVIA", invitados: 4 },
+  "GL107": { nombre: "SERGIO, GABRIELA, OCTAVIO Y CAMILO", invitados: 4 },
+  "GL108": { nombre: "PAZ Y FERMIN", invitados: 2 },
+  "GL109": { nombre: "BONARI FABIAN", invitados: 1 },
+  "GL110": { nombre: "GIL ROXANA", invitados: 1 },
+  "GL111": { nombre: "BONARI CANDELA", invitados: 1 },
+  "GL112": { nombre: "PAEZ RUBEN", invitados: 1 },
+  "GL113": { nombre: "SRUR ALEJANDRA", invitados: 1 },
+  "GL114": { nombre: "PAEZ DELFINA", invitados: 1 },
+  "GL115": { nombre: "PAEZ NATANAEL", invitados: 1 },
+  "GL116": { nombre: "ARBONA EMANUEL", invitados: 1 },
+  "GL117": { nombre: "PAEZ CAMILA", invitados: 1 },
+  "GL118": { nombre: "ARROSPIDE LILIANA", invitados: 1 },
+  "GL119": { nombre: "AGUERRALDE CESAR", invitados: 1 },
+  "GL120": { nombre: "LUCAS, LISINA, MARTINA Y JUAN", invitados: 4 },
+  "GL122": { nombre: "PABLO Y JOSEFINA", invitados: 2 },
+  "GL123": { nombre: "MARIA EUGENIA Y JOSEPH", invitados: 2 },
+  "GL124": { nombre: "CRISTIAN Y TAMARA", invitados: 2 },
+  "GL125": { nombre: "CHAGUACEDA DAMIAN", invitados: 1 },
+  "GL126": { nombre: "PRIETO AGUSTIN", invitados: 1 },
+  "GL127": { nombre: "FERNANDEZ LAUTARO", invitados: 1 },
+  "GL128": { nombre: "BOTELLA CINTIA", invitados: 1 },
+  "GL129": { nombre: "MICAELA Y ADRIAN", invitados: 2 },
+  "GL130": { nombre: "LUCIANA Y JUAN PABLO", invitados: 2 },
+  "GL131": { nombre: "JULIETA Y NICOLAS", invitados: 2 },
+  "GL132": { nombre: "BERICIARTUA AGUSTIN", invitados: 1 },
+  "GL133": { nombre: "GONZALEZ SAEZ AGUSTIN", invitados: 1 },
+  "GL134": { nombre: "BUSCAGLIA RANIERO", invitados: 1 },
+  "GL135": { nombre: "LANDA GERONIMO", invitados: 1 },
+  "GL136": { nombre: "FERNANDEZ RAMIRO", invitados: 1 },
+  "GL137": { nombre: "MALDONADO FACUNDO", invitados: 1 },
+  "GL138": { nombre: "ALFAYA RAMIRO", invitados: 1 },
+  "GL139": { nombre: "KLEIN GERMAN", invitados: 1 },
+  "GL140": { nombre: "GUIDOBONO FRANCISCO", invitados: 1 },
+  "GL141": { nombre: "LOREA MARIANO", invitados: 1 },
+  "GL141B": { nombre: "IROULARD JUAN", invitados: 1 },
+  "GL142": { nombre: "ANDRES Y LUCIANA", invitados: 2 },
+  "GL143": { nombre: "LOMBARDO LUCAS", invitados: 1 },
+  "GL144": { nombre: "NICOLAS Y FLORENCIA", invitados: 2 },
+  "GL145": { nombre: "GUIÑAZU FACUNDO", invitados: 1 },
+  "GL146": { nombre: "FRANCISCO Y LOLI", invitados: 2 },
+  "GL147": { nombre: "FABIAN Y PATRICIA", invitados: 2 },
+  "GL148": { nombre: "FIGLIOZI VICTORIA", invitados: 1 },
+  "GL149": { nombre: "PEDROSA FERNANDA", invitados: 1 },
+  "GL150": { nombre: "SANTIAGO Y ROSA", invitados: 2 },
+  "GL151": { nombre: "PILAR Y SEBASTIAN", invitados: 2 },
+  "GL152": { nombre: "PILLA TRIANA", invitados: 1 },
+  "GL153": { nombre: "GONZALO Y MAGDALENA", invitados: 2 },
+  "GL154": { nombre: "VALENTIN Y FLORENCIA", invitados: 2 },
+  "GL155": { nombre: "VALENTIN Y ORIANA", invitados: 2 },
+  "GL156": { nombre: "SALAS ALEJANDRO", invitados: 1 },
+  "GL157": { nombre: "GUANCA GABRIELA", invitados: 1 },
+  "GL158": { nombre: "BRIAN Y MARIANA", invitados: 2 },
+  "GL159": { nombre: "CARRANZA PATRICIO", invitados: 1 },
+  "GL160": { nombre: "AGUILAR NOELI", invitados: 1 },
+  "GL161": { nombre: "CHALE NICOLE", invitados: 1 },
+  "GL162": { nombre: "KAZMIRUK NOELIA", invitados: 1 },
+  "GL163": { nombre: "SUBOTOSKY CAROLINA", invitados: 1 },
+  "GL164": { nombre: "DE LUCA GRACIELA", invitados: 1 },
+  "GL165": { nombre: "ZAMBRANO VERONICA", invitados: 1 },
+  "GL166": { nombre: "MARTIN Y BERNI", invitados: 2 },
+  "GL167": { nombre: "SEQUEIRA ROCIO", invitados: 1 },
+  "GL168": { nombre: "GOMEZ JAVIER", invitados: 1 },
+  "GL169": { nombre: "ROSSBERG MAYRA", invitados: 1 },
+  "GL170": { nombre: "MALCZEWSKI JAVIER", invitados: 2 },
+  "GL171": { nombre: "AMBROSI RODRIGO", invitados: 1 },
+  "GL172": { nombre: "NAVARRO LUIS", invitados: 1 },
+  "GL173": { nombre: "PASSAUER CECILIA", invitados: 1 },
+  "GL174": { nombre: "SILVERO MIRIAM", invitados: 1 },
+  "GL175": { nombre: "LOPEZ GRACIELA", invitados: 1 },
+  "GL176": { nombre: "PONS CLAUDIA", invitados: 1 },
+  "GL177": { nombre: "GOMEZ GUSTAVO", invitados: 1 },
+  "GL178": { nombre: "PABLO, SILVIA Y BENJA", invitados: 2 },
+  "GL179": { nombre: "BEGUE PRISCILA", invitados: 2 },
+  "GL180": { nombre: "KEVIN Y JULIANA", invitados: 2 },
+  "GL181": { nombre: "ALEXIA Y JUSTINA", invitados: 2 },
+  "GL182": { nombre: "GOMEZ FLORENCIA", invitados: 2 },
+  "GL183": { nombre: "IGNACIO Y ALDANA", invitados: 2 },
+  "GL184": { nombre: "GIL FLOOD BRIGIDA", invitados: 1 },
+  "GL185": { nombre: "BEGUE JUAN", invitados: 2 },
+  "GL186": { nombre: "BRIGIDA, STEPH,CHARLOTTE,MAXIME Y SOPHIE", invitados: 5 },
+  "GL187": { nombre: "PONS JUAN", invitados: 1 },
+  "GL188": { nombre: "AGUSTINA Y SANTIAGO", invitados: 2 },
+  "GL189": { nombre: "DANIELA Y RODRIGO", invitados: 2 },
+  "GL190": { nombre: "COQUI Y MARTIN", invitados: 2 },
+  "GL191": { nombre: "MELE FLORENCIA", invitados: 1 },
+  "GL192": { nombre: "ANSELLMI ANTONELA", invitados: 1 },
+  "GL193": { nombre: "AGUSTINA Y VALENTIN", invitados: 2 },
+  "GL194": { nombre: "CAROLINA AVICO", invitados: 2 },
+  "GL195": { nombre: "CASTELLANI MARTINA", invitados: 1 },
+  "GL196": { nombre: "MARTINEZ ALDANA", invitados: 1 },
+  "GL197": { nombre: "BENITEZ NADIA", invitados: 1 },
+  "GL198": { nombre: "URTENECHE EMILIA", invitados: 1 },
+  "GL199": { nombre: "DANIELA Y CRISTIAN", invitados: 2 },
+  "GL200": { nombre: "ORSO OLIVIA", invitados: 1 },
+  "GL201": { nombre: "FLORENCIA Y ALAN", invitados: 2 },
+  "GL202": { nombre: "LAMOGLIA ANTONELLA", invitados: 2 },
+  "GL203": { nombre: "CECILIA Y FERNANDO", invitados: 2 },
+  "GL204": { nombre: "ARIANA Y NICOLAS", invitados: 2 },
+  "GL205": { nombre: "CABRAL NATALIA", invitados: 1 },
+  "GL300": { nombre: "CANAL FRANCISCO", invitados: 1 },
+  "GL206": { nombre: "LAURA Y DAMIAN", invitados: 2 },
+  "GL207": { nombre: "ZAMARREÑO JUANA", invitados: 1 },
+  "GL208": { nombre: "MATANO CAMILA", invitados: 1 },
+  "GL209": { nombre: "MARTINEZ MICAELA", invitados: 1 },
+  "GL210": { nombre: "GIL FLOOD MERCEDES", invitados: 1 },
+  "GL211": { nombre: "CARRASCO AYELEN", invitados: 1 },
+  "GL212": { nombre: "COUSAN PAULA", invitados: 1 },
+  "GL213": { nombre: "ROCCA VICTORIA", invitados: 1 },
+  "GL214": { nombre: "KOHAN MANUELA", invitados: 1 },
+  "GL215": { nombre: "MACARENA Y NAHUEL", invitados: 2 },
+  "GL216": { nombre: "RODRIGUEZ AGUSTIN", invitados: 1 },
+  "GL217": { nombre: "BOZETTI MAGDALENA", invitados: 1 },
+  "GL218": { nombre: "REILLY PATRICIO", invitados: 1 },
+  "GL219": { nombre: "PALMIERO FLAVIA", invitados: 1 },
+  "GL220": { nombre: "NAVARRO CAROLINA", invitados: 1 },
+  "GL221": { nombre: "MAGALI Y MATIAS", invitados: 2 },
+  "GL222": { nombre: "IBARRA CAROLINA", invitados: 1 },
+  "GL223": { nombre: "VICTOR Y PAULA", invitados: 2 },
+  "GL224": { nombre: "JULIETA Y ALEJANDRO", invitados: 2 },
+  "GL225": { nombre: "VANESA Y MAURO", invitados: 2 },
+  "GL226": { nombre: "MASTRONARDI LUIS", invitados: 2 },
+  "GL227": { nombre: "FALGARES NATALIA", invitados: 2 },
+  "GL228": { nombre: "GABRIELA Y GASTON", invitados: 2 },
+  "GL229": { nombre: "BASTIAS JOAQUIN", invitados: 1 },
+  "GL230": { nombre: "AQUINO BLANCA", invitados: 1 },
+  "GL231": { nombre: "GOMEZ DIEGO", invitados: 1 },
+  "GL232": { nombre: "MALDONADO REMIGIO", invitados: 1 },
+  "GL233": { nombre: "ROSO GUILLERMO", invitados: 1 },
+  "GL234": { nombre: "ALFANO CAROLINA", invitados: 1 },
+  "GL235": { nombre: "COHEN ISMAEL", invitados: 1 },
+  "GL236": { nombre: "BRITE TAMARA", invitados: 1 },
+  "GL237": { nombre: "GRAU JAVIER", invitados: 1 },
+  "GL238": { nombre: "CLOCCHIATTI DAMIAN", invitados: 2 },
+  "GL239": { nombre: "CARLOS E IVAN", invitados: 2 },
+  "GL240": { nombre: "BATTES ALEJANDRA", invitados: 1 },
+  "GL241": { nombre: "CAROLA KRBAVCIC", invitados: 1 },
+  "GL242": { nombre: "ORNELA GHIO", invitados: 1 },
+};
+
+    function checkCode() {
+      const code = document.getElementById("codeInput").value.trim();
+      const info = invitados[code];
+      if (info) {
+        localStorage.setItem("invitado", JSON.stringify(info));
+        window.location.href = "bienvenida.html";
+      } else {
+        alert("Código no válido. Por favor, intentá nuevamente.");
+      }
+    }
+ </script>
+</head>
+<body class="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+      style="background-image: url('https://i.imgur.com/aTsOGgz.jpeg');">
+  <div class="container p-8 rounded-xl w-full max-w-md text-center">
+    <h2 class="title text-gray-900 mb-4"><span id="nombre"></span></h2>
+
+    <p class="subtitle text-gray-700 mb-2">¡Esperamos que puedan compartir esta fiesta junto a nosotros!</p>
+    <p class="text-md text-black-800 ">N° DE INVITADOS:</p>
+    <p class="text-md text-black-800"> <strong id="cantidad"></strong></p>
+    <button onclick="abrirInvitacion()" class="custom-button hover:opacity-90 transition duration-200 w-48 mx-auto rounded-md">
+      ABRIR INVITACIÓN
+    </button>
+  </div>
+</body>
+</html>
