@@ -194,18 +194,17 @@
         alert("Código no válido. Por favor, intentá nuevamente.");
       }
     }
- </script>
+  </script>
 </head>
 <body class="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
-      style="background-image: url('https://i.imgur.com/aTsOGgz.jpeg');">
-  <div class="container p-8 rounded-xl w-full max-w-md text-center">
-    <h2 class="title text-gray-900 mb-4"><span id="nombre"></span></h2>
-
-    <p class="subtitle text-gray-700 mb-2">¡Esperamos que puedan compartir esta fiesta junto a nosotros!</p>
-    <p class="text-md text-black-800 ">N° DE INVITADOS:</p>
-    <p class="text-md text-black-800"> <strong id="cantidad"></strong></p>
-    <button onclick="abrirInvitacion()" class="custom-button hover:opacity-90 transition duration-200 w-48 mx-auto rounded-md">
-      ABRIR INVITACIÓN
+      style="background-image: url('https://i.postimg.cc/25KXT60F/portADA.jpg');">
+  <div class="container bg-white bg-opacity-40 p-8 rounded-xl w-full max-w-md text-center backdrop-blur-sm">
+    <h1 class="title text-black-800 uppercase mb-4">¡Nos encantaría que seas parte de este día tan especial!</h1>
+    <p class="subtitle text-black-700 mb-6">Ingrese tu Boarding Pass para continuar:</p>
+    <input id="codeInput" type="text" placeholder=""
+           class="w-full px-4 py-3 border border-white rounded-md mb-4 bg-white bg-opacity-30 text-center text-gray-900 font-medium placeholder-gray-400"/>
+    <button onclick="checkCode()" class="custom-button hover:opacity-90 transition duration-200">
+      VER INVITACIÓN
     </button>
   </div>
 </body>
