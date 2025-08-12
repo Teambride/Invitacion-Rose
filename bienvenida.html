@@ -42,20 +42,32 @@
   </script>
 </head>
 <body class="bg-white text-gray-800">
-  
 
-  <!-- Pantalla de bienvenida -->
- <section class="relative w-full bg-white flex justify-center items-start p-0 m-0">
-  <img src="https://i.postimg.cc/NFsZMYjF/Tarjeta-Save-the-date-Invitaci-n-de-boda-delicada-y-minimalista-coral-y-negro.jpg" alt="Geraldine y Lucas"
-       class="object-contain w-full h-[90vh]" />
-
-  <!-- Flecha animada sobre la imagen -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-    <svg class="animate-bounce w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-      <path fill-rule="evenodd" d="M10 14a1 1 0 01-.707-.293l-5-5a1 1 0 111.414-1.414L10 11.586l4.293-4.293a1 1 0 011.414 1.414l-5 5A1 1 0 0110 14z" clip-rule="evenodd" />
-    </svg>
+    <!-- Pantalla de bienvenida -->
+  <div id="pantallaBienvenida" class="min-h-screen flex items-center justify-center bg-[url('https://i.postimg.cc/25KXT60F/portADA.jpg')] bg-cover bg-center px-4 fade-transition">
+    <div class="bg-white/60 backdrop-blur-md shadow-lg rounded-xl p-8 max-w-md w-full text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4"><span id="nombre"></span></h2>
+      <p class="text-sm text-gray-700 mb-2">¡Esperamos que puedan compartir esta fiesta junto a nosotros!</p>
+      <p class="text-md text-black-800">N° DE INVITADOS:</p>
+      <p class="text-md text-black-800 font-bold"><span id="cantidad"></span></p>
+      <button onclick="mostrarInvitacion()" class="custom-button mt-6 hover:opacity-90 transition duration-300">
+        ABRIR INVITACIÓN
+      </button>
+    </div>
   </div>
-</section>
+
+  <!-- Contenido de la invitación completa -->
+  <div id="invitacionCompleta" class="opacity-0 hidden fade-transition">
+
+   <!-- PORTADA -->
+    <section class="relative w-full bg-white flex justify-center items-start p-0 m-0">
+      <img src="https://i.postimg.cc/Pqk2d8T6/Tarjeta-Save-the-date-Invitaci-n-de-boda-delicada-y-minimalista-coral-y-negro.png" alt="Invitación" class="object-contain w-full h-[90vh]" />
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <svg class="animate-bounce w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 14a1 1 0 01-.707-.293l-5-5a1 1 0 111.414-1.414L10 11.586l4.293-4.293a1 1 0 011.414 1.414l-5 5A1 1 0 0110 14z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </section>
 
 
  <!-- Sección de bienvenida -->
